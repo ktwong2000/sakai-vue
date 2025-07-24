@@ -1,7 +1,13 @@
 <script setup>
+import "@aws-amplify/ui-vue/styles.css";
 import { ref } from 'vue';
-
 import AppMenuItem from './AppMenuItem.vue';
+
+import { signOut } from 'aws-amplify/auth';
+
+//await signOut();  
+
+
 
 const model = ref([
     {
@@ -133,7 +139,16 @@ const model = ref([
                 icon: 'pi pi-fw pi-github',
                 url: 'https://github.com/primefaces/sakai-vue',
                 target: '_blank'
+            },
+
+            {
+                label: 'Sign Out',
+                icon: 'pi pi-fw pi-sign-out',
+                command: () => signOut()
             }
+
+
+
         ]
     }
 ]);
@@ -146,6 +161,10 @@ const model = ref([
             <li v-if="item.separator" class="menu-separator"></li>
         </template>
     </ul>
+
+
+
+
 </template>
 
 <style lang="scss" scoped></style>

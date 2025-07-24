@@ -12,3 +12,8 @@ dist
 .eslintcache
 api-generator/typedoc.json
 **/.DS_Store
+
+# amplify
+.amplify
+amplify_outputs*
+amplifyconfiguration*
